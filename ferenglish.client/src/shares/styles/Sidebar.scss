@@ -84,10 +84,13 @@
 }
 
 .sidebar-item {
-    transition: background-color 0.3s;
+    margin-right: 10px;
+    width: 100%;     
+    // margin: 0 10px;
+    // transition: background-color 0.3s;
 
     &.active {
-        border-radius: 30px;
+    border-radius: 30px;
         background-color: #8470FF;
         color: white;
 
@@ -100,4 +103,54 @@
         border-radius: 30px;
         background-color: #bab1f4 !important;
     }
-}
+
+    .logout-btn {
+        color: #e53935;
+    
+        &:hover {
+          background-color: #ffebee;
+        }
+      }
+    }
+    
+    /* Logout Modal Styles */
+    .logout-modal {
+        .css-7do1ps-MuiListItemIcon-root{
+            margin-left: 10px;
+        }
+      .css-10d30g3-MuiPaper-root-MuiDialog-paper{
+          border-radius: 6% ;
+      }
+  
+      .logout-dialog-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+    
+      .logout-icon {
+        font-size: 40px;
+        color: red;
+        margin-bottom: 10px;
+      }
+    
+      .logout-confirm-btn {
+        background-color: #e53935;
+        color: white;
+    
+        &:hover {
+          background-color: #d32f2f;
+        }
+      }
+    
+      .logout-cancel-btn {
+        color: #1976d2;
+        border-color: #1976d2;
+    
+        &:hover {
+          background-color: #e3f2fd;
+        }
+      }
+    }
+    
