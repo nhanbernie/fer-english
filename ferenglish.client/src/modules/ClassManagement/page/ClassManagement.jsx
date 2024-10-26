@@ -1,8 +1,8 @@
-
+import ClassManage from "../components/classManage";
 
 const ClassManagement = () => {
   return (
-    <div>ClassManagement</div>
+    <ClassManage/>
   )
 }
 
