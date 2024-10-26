@@ -1,0 +1,65 @@
+/* src/styles/schedule.scss */
+.schedule-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    h2 {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .year-week-select {
+        display: flex;
+        gap: 10px;
+
+        select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #8470FF;
+        color: white;
+    }
+
+    td {
+        height: 50px;
+    }
+}
+
+.note-section {
+    margin-top: 20px;
+    font-size: 14px;
+
+    .note {
+        color: red;
+    }
+
+    .notification {
+        color: green;
+    }
+}
