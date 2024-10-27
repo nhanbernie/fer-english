@@ -1,32 +1,41 @@
 .layout {
-    display: flex;
-    height: 100vh;
-    transition: margin-left 0.3s ease;
-  
-    &.sidebar-open {
-      .layout-container {
-        margin-left: 250px;
-      }
-    }
-  
-    &.sidebar-closed {
-      .layout-container {
-        margin-left: 80px;
-      }
+  display: flex;
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+
+  &.sidebar-open {
+    .layout-container {
+      margin-left: 250px;
     }
   }
-  
-  .layout-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    transition: margin-left 0.3s ease;
+
+  &.sidebar-closed {
+    .layout-container {
+      margin-left: 80px;
+    }
   }
-  
-  .layout-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0;
-    overflow-y: auto;
-  }
-  
+}
+
+.layout-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+}
+
+
+.layout-content.MuiBox-root.css-19midj6 {
+  background-color: #fff !important;
+  // padding: 0px;
+}
+
+.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-27y8xl-MuiToolbar-root {
+  // background-color: #fff !important;
+}
