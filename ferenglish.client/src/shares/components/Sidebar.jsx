@@ -30,7 +30,7 @@ import "../styles/sidebar.scss";
 
 // Menu items for the sidebar
 const menuItems = [
-  { text: "User Management", icon: <HomeOutlinedIcon />, path: "/" },
+  { text: "User Management", icon: <HomeOutlinedIcon />, path: "/user-management" },
   { text: "Class Management", icon: <ClassOutlinedIcon />, path: "/class-management" },
   { text: "Attendance Tracking", icon: <CalendarTodayOutlinedIcon />, path: "/attendance" },
   { text: "Salary and Fee", icon: <AttachMoneyOutlinedIcon />, path: "/salary-fee" },
