@@ -25,6 +25,7 @@ import ClassOutlinedIcon from "@mui/icons-material/ClassOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import EventIcon from '@mui/icons-material/Event';
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import "../styles/sidebar.scss";
 
@@ -34,6 +35,7 @@ const menuItems = [
   { text: "Class Management", icon: <ClassOutlinedIcon />, path: "/class-management" },
   { text: "Attendance Tracking", icon: <CalendarTodayOutlinedIcon />, path: "/attendance" },
   { text: "Salary and Fee", icon: <AttachMoneyOutlinedIcon />, path: "/salary-fee" },
+  { text: "Weekly Timetable", icon: <EventIcon />, path: "/weekly-time-table" },
   { text: "Help", icon: <HelpOutlineOutlinedIcon />, path: "/help" },
 ];
 

@@ -1,0 +1,282 @@
+/* Set default font and body alignment */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container for class cards */
+.class-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 30px; /* Gap between cards */
+    width: 80%; /* Width of container */
+    margin: 40px auto; /* Center alignment */
+    align-items: center;
+}
+
+/* Styling each class card */
+.class-card {
+    padding: 20px; /* Inner padding */
+    border-radius: 16px; /* Rounded corners */
+    background: linear-gradient(135deg, #c3a3ff, #7294ff); /* Default gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4 / 2; /* Aspect ratio */
+}
+
+/* Different background colors for specific cards */
+.class-card:nth-child(2) {
+    background: linear-gradient(135deg, #72cff8, #f08ac4);
+}
+
+.class-card:nth-child(3) {
+    background: linear-gradient(135deg, #ff8a8a, #ff6f61);
+}
+
+.class-card:nth-child(4) {
+    background: linear-gradient(135deg, #a8f2bd, #4fc3f7);
+}
+
+/* Hover effect for each card */
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling within each card */
+.class-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 15px 0; /* Space below title */
+}
+
+/* Content styling within each card */
+.class-card .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it takes up full width */
+    padding: 0 15px; /* Padding on left and right for alignment */
+    margin-bottom: 5px; /* Adjust space between rows */
+}
+
+/* Label styling */
+.class-card .info-row .label {
+    font-size: 0.85rem; /* Font size for labels */
+    font-weight: 700;
+    color: #111111; /* Dark color for labels */
+    text-align: left;
+    flex: 1; /* Equal space on the left */
+}
+
+/* Value styling */
+.class-card .info-row .value {
+    font-size: 0.85rem; /* Font size for values */
+    font-weight: 500;
+    color: #e1e1e1; /* Light color for values */
+    text-align: right;
+    flex: 1; /* Equal space on the right */
+}
+
+/* Center alignment adjustments */
+.class-card h3, .class-card .info-row {
+    width: 90%; /* Slightly reduce width for centered alignment */
+    text-align: center;
+    margin: auto; /* Center-align each row */
+}
+/* General layout for class attendance */
+.class-attendance {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Header Section */
+.class-attendance h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.class-attendance h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #A0A0A0;
+    margin-bottom: 40px;
+}
+
+/* Table Styling */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.attendance-table th, 
+.attendance-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.attendance-table th {
+    font-weight: bold;
+    background-color: #F7F7FB;
+    color: #8470FF;
+    text-align: left;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.attendance-table td {
+    background-color: #FFFFFF; /* White background for table rows */
+    font-size: 16px;
+    color: #333333;
+    padding: 15px;
+}
+
+/* Specific adjustments for table cells */
+.attendance-table td:first-child {
+    font-weight: bold;
+    color: #32C685; /* Green text for student names */
+}
+
+.attendance-table td:nth-child(2) {
+    font-weight: bold;
+    color: #32C685;
+}
+
+/* Checkbox Styling */
+.attendance-table input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 2px solid #8470FF;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.attendance-table input[type="checkbox"]:hover {
+    border-color: #4E4EFF; /* Darker purple on hover */
+}
+
+/* Last column for actions (three dots) */
+.actions-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.actions-button:hover {
+    color: #8470FF; /* Purple color when hovered */
+}
+
+/* Table border radius adjustment for last row */
+.attendance-table tbody tr:last-child td {
+    border-bottom-left-radius: 12px; /* Bottom left corner rounding */
+    border-bottom-right-radius: 12px; /* Bottom right corner rounding */
+}
+
+/* Adjusting header and button */
+.header-title {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8470FF;
+}
+
+/* Side menu styling */
+.side-menu {
+    position: fixed;
+    width: 260px;
+    height: 100%;
+    background-color: #F0F0FF;
+    padding-top: 50px;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu li {
+    margin: 20px 0;
+}
+
+.side-menu li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.side-menu li a:hover {
+    background-color: #8470FF;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.side-menu .active a {
+    background-color: #8470FF;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.side-menu img {
+    margin-right: 10px;
+}
+
+/* Right header profile and search section */
+.right-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.right-header img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.right-header .user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.right-header .user-info h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.right-header .user-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #A0A0A0;
+}
