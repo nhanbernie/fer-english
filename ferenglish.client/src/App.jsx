@@ -10,8 +10,8 @@ import SalaryAndFee from "./modules/SalaryAndFee/page/SalaryAndFee";
 import WeeklyTimeTable from "./modules/WeeklyTimeTable/components/WeeklyTimeTable";
 import Help from "./modules/Help/page/Help";
 import { AuthProvider, AuthContext } from "./AuthContext";
-import Login from "./shares/components/LoginPage";
 import { useContext } from "react";
+import SignIn from "./modules/Auth/SignIn/page/SignIn";
 
 // Component to handle role-based access for user management
 const ProtectedUserManagement = () => {
@@ -38,7 +38,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           {/* Public route for login */}
-          <Route path="/signin" element={<Login />} />
+          <Route path="/signin" element={<SignIn />} />
 
           {/* Private routes that require authentication */}
           <Route element={<PrivateRoutes />}>
