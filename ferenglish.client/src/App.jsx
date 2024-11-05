@@ -1,28 +1,73 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./shares/page/Homelayout";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
+// Layout
+import Homelayout from "./shares/page/Homelayout";
+import HomePage from "./shares/components/HomePage";
+// Management pages
+import UserManagementTeacher from "./modules/UserManagement/teacher/page/UserManagement";
+import UserManagementAdmin from "./modules/UserManagement/admin/page/UserManagement";
 import Attendance from "./modules/Attendance/teacher/page/Attendence";
 import ClassManagement from "./modules/ClassManagement/page/ClassManagement";
 import SalaryAndFee from "./modules/SalaryAndFee/page/SalaryAndFee";
 import WeeklyTimeTable from "./modules/WeeklyTimeTable/components/WeeklyTimeTable";
 import Help from "./modules/Help/page/Help";
-import UserManagement from "./modules/UserManagement/page/UserManagement";
+import { AuthProvider, AuthContext } from "./AuthContext";
+import { useContext } from "react";
+import SignIn from "./modules/Auth/SignIn/page/SignIn";
+
+// Component to handle role-based access for user management
+const ProtectedUserManagement = () => {
+  const { role } = useContext(AuthContext);
+
+  if (role === "admin") {
+    return <UserManagementAdmin />;
+  } else if (role === "teacher") {
+    return <UserManagementTeacher />;
+  } else {
+    return <Navigate to="/" />;
+  }
+};
+
+// PrivateRoutes component to protect routes requiring authentication
+const PrivateRoutes = () => {
+  const { role } = useContext(AuthContext);
+  return role ? <Outlet /> : <Navigate to="/signin" />;
+};
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* HomePage (or Dashboard) serves as the layout wrapping other pages */}
-        <Route path="/" element={<HomePage />}>
-          {/* Nested routes rendered inside Outlet within HomePage */}
-          <Route path="user-management" element={<UserManagement />}/>
-          <Route path="attendance" element={<Attendance />} />
-          <Route path="class-management" element={<ClassManagement />} />
-          <Route path="salary-fee" element={<SalaryAndFee />} />
-          <Route path="weekly-time-table" element={<WeeklyTimeTable />} />
-          <Route path="help" element={<Help />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Public route for login */}
+          <Route path="/signin" element={<SignIn />} />
+
+          {/* Private routes that require authentication */}
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Homelayout />}>
+              {/* Default nested route displayed in Outlet */}
+              <Route index element={<HomePage />} />
+              {/* Conditionally render UserManagement based on role */}
+              <Route
+                path="user-management"
+                element={<ProtectedUserManagement />}
+              />
+              <Route path="attendance" element={<Attendance />} />
+              <Route path="class-management" element={<ClassManagement />} />
+              <Route path="salary-fee" element={<SalaryAndFee />} />
+              <Route path="weekly-time-table" element={<WeeklyTimeTable />} />
+              <Route path="help" element={<Help />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

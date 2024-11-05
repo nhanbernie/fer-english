@@ -2,11 +2,28 @@ import { Container, Row, Col, Form, Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/UserManagement.scss";
 import Table from '../components/Table';
+import { useState } from 'react';
+import StudentModal from '../../../../shares/components/modal/components/studentModal';
 
 const UserManagement = () => {
+  // open, onClose, onSubmit
+  const [open, setOpen] = useState(false);
+  const handleAddStudent = () => {
+    setOpen(true);
+    console.log('test');
+    
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const handleAddTeacher = () => {
+
+  }
 
   return (
-    <Container className='mt-5'>
+    <Container fluid className='mt-5'>
       <Row className="justify-content-between align-items-center mb-4">
         <Col xs="auto">
           <div className="dropdown custom-dropdown">
@@ -34,16 +51,17 @@ const UserManagement = () => {
         </Col>
         <Col xs="auto" className='container-button'>
           <div className="d-flex gap-3">
-            <button className="btn btn-primary add-button" type="button">
-              <i className="fas fa-plus me-2"></i> Add teacher
-            </button>
-            <button className="btn btn-primary add-button" type="button">
+            <button className="btn btn-primary add-button" type="button" onClick={handleAddStudent}>
               <i className="fas fa-plus me-2"></i> Add student
             </button>
           </div>
         </Col>
       </Row>
       <Table />
+      <StudentModal 
+        open={open}
+        onClose={handleClose}
+      />
     </Container>
   );
 };

@@ -1,0 +1,147 @@
+.studentModal-container {
+    .modal-container-wrapper {
+        position: fixed;
+        /* Đảm bảo modal nằm cố định ở giữa màn hình */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Nền tối */
+        z-index: 1000;
+        /* Đảm bảo modal ở trên cùng */
+    }
+
+    .modal-container-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .modal-container {
+        background-color: white;
+        border-radius: 30px;
+        padding: 20px;
+        width: 400px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* Đảm bảo chiều rộng 100% */
+    }
+
+    .modal-title {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        /* Căn giữa tiêu đề */
+        flex: 1;
+        /* Cho phép tiêu đề mở rộng */
+    }
+
+    .modal-close-button {
+        font-size: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .modal-subtitle {
+        color: gray;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .modal-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .input-group {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .input-group:last-child {
+        margin-right: 0;
+    }
+
+    .input-label {
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .input-field {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .input-field-id {
+        width: 96%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .textarea-field {
+        height: 100px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cancel-button {
+        padding: 10px 20px;
+        border: 1px solid gray;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .save-button {
+        padding: 10px 20px;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
