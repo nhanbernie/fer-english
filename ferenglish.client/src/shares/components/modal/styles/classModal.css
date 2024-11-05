@@ -1,0 +1,119 @@
+.className-modal {
+    .modal-container-wrapper {
+        position: fixed; /* Đảm bảo modal có vị trí cố định */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        background-color: rgba(0, 0, 0, 0.5); /* Nền tối để nổi bật modal */
+        z-index: 1000; /* Đảm bảo modal ở trên cùng */
+    }
+
+    .modal-container {
+        background-color: white;
+        border-radius: 30px;
+        padding: 20px;
+        width: 400px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .modal-title {
+        font-size: 24px;
+        font-weight: 600;
+        flex-grow: 1;
+        text-align: center; /* Căn giữa tiêu đề */
+    }
+
+    .modal-close-button {
+        font-size: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .modal-subtitle {
+        color: gray;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .modal-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .input-group {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .input-group:last-child {
+        margin-right: 0;
+    }
+
+    .input-label {
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .input-field {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .textarea-field {
+        height: 100px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cancel-button {
+        padding: 10px 20px;
+        border: 1px solid gray;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .save-button {
+        padding: 10px 20px;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}

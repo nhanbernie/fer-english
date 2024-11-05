@@ -1,10 +1,10 @@
 import { Row } from 'react-bootstrap';
 import "../styles/Table.scss"
 import { useState } from 'react';
-import dotHead from "../../../asset/images/dotHead.svg"
+import dotHead from "../../../../asset/images/dotHead.svg"
 
 const Table = () => {
-    const [members, setMembers] = useState([
+    const [members] = useState([
         { id: "SE123", name: "To Thien Nhan", Email: "user@gmail.com", className: "BBC", course: "Band 9", role: "Teacher", phoneNum: "123123123" },
         { id: "StEn101", name: "Huỳnh Yến Vi", Email: "vi@gmail.com", className: "ABC English", course: "IETL 6+", role: "Student", phoneNum: "09651478523" },
         { id: "StEn102", name: "Nguyen Van A", Email: "nguyena@gmail.com", className: "XYZ English", course: "Band 6", role: "Student", phoneNum: "0912345678" },
