@@ -1,6 +1,14 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
 // Layout
-import HomePage from "./shares/page/Homelayout";
+import Homelayout from "./shares/page/Homelayout";
+import HomePage from "./shares/components/HomePage";
 // Management pages
 import UserManagementTeacher from "./modules/UserManagement/teacher/page/UserManagement";
 import UserManagementAdmin from "./modules/UserManagement/admin/page/UserManagement";
@@ -17,9 +25,9 @@ import SignIn from "./modules/Auth/SignIn/page/SignIn";
 const ProtectedUserManagement = () => {
   const { role } = useContext(AuthContext);
 
-  if (role === 'admin') {
+  if (role === "admin") {
     return <UserManagementAdmin />;
-  } else if (role === 'teacher') {
+  } else if (role === "teacher") {
     return <UserManagementTeacher />;
   } else {
     return <Navigate to="/" />;
@@ -42,9 +50,14 @@ const App = () => {
 
           {/* Private routes that require authentication */}
           <Route element={<PrivateRoutes />}>
-            <Route path="/" element={<HomePage />}>
+            <Route path="/" element={<Homelayout />}>
+              {/* Default nested route displayed in Outlet */}
+              <Route index element={<HomePage />} />
               {/* Conditionally render UserManagement based on role */}
-              <Route path="user-management" element={<ProtectedUserManagement />} />
+              <Route
+                path="user-management"
+                element={<ProtectedUserManagement />}
+              />
               <Route path="attendance" element={<Attendance />} />
               <Route path="class-management" element={<ClassManagement />} />
               <Route path="salary-fee" element={<SalaryAndFee />} />
