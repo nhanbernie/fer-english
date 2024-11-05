@@ -6,6 +6,7 @@ import Classmanage from '../components/classManage';
 const UserManagement = () => {
 
   return (
+    <div className='classMange'>
     <Container className='mt-5'>
       <Row className="justify-content-between align-items-center mb-4">
         <Col xs="auto">
@@ -45,6 +46,7 @@ const UserManagement = () => {
       </Row>
       <Classmanage />
     </Container>
+    </div>
   );
 };
 
