@@ -1,7 +1,8 @@
 import { Row } from 'react-bootstrap';
-import "../styles/Table.scss"
+import "../styles/Table.scss";
 import { useState } from 'react';
-import dotHead from "../../../../asset/images/dotHead.svg"
+import PositionedActionModal from '../../../../shares/components/modal/components/PositionedActionModal';
+import dotHead from "../../../../asset/images/dotHead.svg";
 
 const Table = () => {
     const [members] = useState([
@@ -26,6 +27,17 @@ const Table = () => {
         { id: "StEn118", name: "Do Van Q", Email: "doq@gmail.com", className: "ABC English", course: "Band 9", role: "Student", phoneNum: "0912345694" },
         { id: "StEn119", name: "Ngo Thi R", Email: "ngor@gmail.com", className: "BBC", course: "Band 7", role: "Teacher", phoneNum: "0912345695" }
     ]);
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleOpenModal = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleCloseModal = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <>
             <Row className='number-items'>
@@ -52,13 +64,25 @@ const Table = () => {
                         <div className="cell">{member.role}</div>
                         <div className="cell">{member.phoneNum}</div>
                         <div className="cell head-dot">
-                            <img src={dotHead} alt="" />
+                            <img
+                                src={dotHead}
+                                alt=""
+                                onClick={handleOpenModal}
+                                style={{ cursor: "pointer" }}
+                            />
                         </div>
                     </div>
                 ))}
             </div>
-        </>
-    )
-}
 
-export default Table
+            {/* PositionedActionModal with action items */}
+            <PositionedActionModal
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleCloseModal}
+            />
+        </>
+    );
+};
+
+export default Table;

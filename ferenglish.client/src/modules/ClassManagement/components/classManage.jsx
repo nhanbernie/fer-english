@@ -2,6 +2,7 @@ import { Row } from 'react-bootstrap';
 import "../styles/Table.scss"
 import { useState } from 'react';
 import dotHead from "../../../asset/images/dotHead.svg"
+import PositionedActionModal from '../../../shares/components/modal/components/PositionedActionModal';
 
 const Classmanage = () => {
     const [members, setMembers] = useState([
@@ -15,6 +16,17 @@ const Classmanage = () => {
     { className: 'En301', teacherName: 'Huỳnh Tấn Lực', nameCenter: 'ABC English', studentNumber: 12 },
     { className: 'En401', teacherName: 'Phan Nguyên Vũ', nameCenter: 'ABC English', studentNumber: 10 },
     ]);
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleOpenModal = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleCloseModal = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <>
             <Row className='number-items'>
@@ -35,11 +47,23 @@ const Classmanage = () => {
                         <div className="cell">{member.nameCenter}</div>
                         <div className="cell">{member.studentNumber}</div>
                         <div className="cell head-dot">
-                            <img src={dotHead} alt="" />
+                        <img
+                                src={dotHead}
+                                alt=""
+                                onClick={handleOpenModal}
+                                style={{ cursor: "pointer" }}
+                            />
                         </div>
                     </div>
                 ))}
             </div>
+
+            {/* PositionedActionModal with action items */}
+            <PositionedActionModal
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleCloseModal}
+            />
         </>
     )
 }
