@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"; 
 import {
   Box,
@@ -28,7 +28,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import EventIcon from '@mui/icons-material/Event';
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import "../styles/sidebar.scss";
-
+import {  AuthContext } from "../../AuthContext";
 // Menu items for the sidebar
 const menuItems = [
   { text: "User Management", icon: <HomeOutlinedIcon />, path: "/user-management" },
@@ -48,7 +48,7 @@ export default function Sidebar({
 }) {
   const navigate = useNavigate(); // Use navigate for redirecting
   const [logoutModalOpen, setLogoutModalOpen] = useState(false); // State for modal visibility
-
+  const { role, setRole } = useContext(AuthContext);
   // Handle logout button to open the modal
   const handleLogoutClick = () => {
     setLogoutModalOpen(true); // Open the logout modal
@@ -57,7 +57,8 @@ export default function Sidebar({
   // Confirm logout and navigate to login or home page
   const confirmLogout = () => {
     setLogoutModalOpen(false); // Close the modal
-    navigate("/"); // Redirect to home or login page after logout
+    navigate("/signin"); // Redirect to home or login page after logout
+    setRole(null)
   };
 
   // Close the modal without logging out
@@ -73,6 +74,8 @@ export default function Sidebar({
       onMenuClick(item.text);
     }
   };
+
+ 
 
   return (
     <>

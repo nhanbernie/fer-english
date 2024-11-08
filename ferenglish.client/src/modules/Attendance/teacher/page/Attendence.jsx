@@ -14,8 +14,9 @@ const Attendance = () => {
     ]);
 
     const handleNavigateToClass = (classId) => {
-        navigate(`/attendance/${classId}`); // Navigate to class attendance page
+        navigate(`/class-attendance/${classId}`);  // Thêm tham số classId vào URL
     };
+    
 
     return (
         <div className="attendance-tracking">

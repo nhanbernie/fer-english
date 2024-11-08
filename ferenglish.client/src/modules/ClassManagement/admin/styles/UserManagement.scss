@@ -1,0 +1,40 @@
+.classMange{
+  .container-button {
+    .add-button {
+      border-radius: 30px;
+      background: #8470FF;
+      width: 150px;
+      height: 50px;
+    }
+  
+    .btn {
+      padding: 0px 10px 0px 10px !important;
+      outline: none !important;
+      border: none !important;
+  
+      &:hover {
+        background-color: #614af6 !important;
+      }
+    }
+  }
+  
+  
+  .custom-dropdown .custom-dropdown-toggle {
+    border: 1px solid #BFB7FF;
+    border-radius: 30px;
+    border: 1px solid #D0D0D4;
+    background: #FFF;
+    color: #D0D0D4;
+    height: 50px;
+    width: 104px;
+  }
+  
+  .custom-dropdown .custom-dropdown-menu {
+    border: 2px solid #BFB7FF;
+    border-radius: 20px;
+  }
+  
+  .custom-dropdown .custom-dropdown-search {
+    border: 1px solid #8470FF;
+  }
+  }

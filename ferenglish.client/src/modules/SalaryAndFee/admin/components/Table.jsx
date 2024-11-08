@@ -1,10 +1,10 @@
 import { Row } from "react-bootstrap";
 import "../styles/Table.scss";
 import { useState, useEffect, useRef } from "react";
-import dotHead from "../../../asset/images/dotHead.svg";
+import dotHead from "../../../../asset/images/dotHead.svg";
 
 const Table = () => {
-  const [students, setStudents] = useState([
+  const [students] = useState([
     {
       id: "En101",
       name: "Nguyễn Gia Thịnh",
@@ -188,7 +188,7 @@ const Table = () => {
 
       <div className="table-container">
         <div className="table-header">
-          <div className="cell">ID Student</div>
+          <div className="cell">ID</div>
           <div className="cell">Student Name</div>
           <div className="cell">Tuition fee</div>
           <div className="cell">Name Center</div>

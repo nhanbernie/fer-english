@@ -4,14 +4,16 @@ import "../styles/UserManagement.scss";
 import Table from '../components/Table';
 import { useState } from 'react';
 import StudentModal from '../../../../shares/components/modal/components/studentModal';
+import TeacherModal from '../../../../shares/components/modal/components/teacherModal';
+
 
 const UserManagement = () => {
   // open, onClose, onSubmit
   const [open, setOpen] = useState(false);
+  const [openTeacher, setOpenTeacher] = useState(false);
+
   const handleAddStudent = () => {
-    setOpen(true);
-    console.log('test');
-    
+    setOpen(true);   
   }
 
   const handleClose = () => {
@@ -19,7 +21,7 @@ const UserManagement = () => {
   }
 
   const handleAddTeacher = () => {
-
+    setOpenTeacher(true);
   }
 
   return (
@@ -64,6 +66,11 @@ const UserManagement = () => {
       <StudentModal 
         open={open}
         onClose={handleClose}
+      />
+
+      <TeacherModal 
+        open={openTeacher}
+        onClose={() => setOpenTeacher(false)}
       />
     </Container>
   );

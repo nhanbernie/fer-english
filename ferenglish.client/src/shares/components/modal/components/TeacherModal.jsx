@@ -24,7 +24,7 @@ const TeacherModal = ({ open, onClose, onSubmit }) => {
       <div className="modal-container-wrapper">
         <div className="modal-container">
           <div className="modal-header">
-            <h2 className="modal-title">Adding a new student</h2>
+            <h2 className="modal-title">Adding a new teacher</h2>
             <button className="modal-close-button" onClick={onClose}>
               &times;
             </button>

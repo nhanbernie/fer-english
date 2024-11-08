@@ -1,0 +1,52 @@
+.classMange{
+
+    .table-container {
+        width: 100%;
+    
+        .table-header,
+        .table-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) 0.5fr; /* Chia đều các cột chính, giữ nguyên kích thước cho cột chứa head-dot */
+            align-items: center;
+        }
+    
+        .table-header {
+            background-color: rgba(236, 234, 255, 0.78);
+            font-weight: bold;
+            border-radius: 50px;
+            height: 50px;
+            padding: 12px 12px 12px 20px;
+            border: 0.5px solid #BFB7FF;
+            color: #8470FF;
+        }
+    
+        .table-row {
+            background-color: #f8f9fa;
+            border-radius: 50px;
+            border: 1px solid #ECEAFF;
+            background: #FFF;
+            height: 50px;
+            padding: 12px 12px 12px 20px;
+    
+            &:hover {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(236, 234, 255, 0.78));
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .head-dot {
+                cursor: pointer;
+                justify-self: center; /* Canh giữa hình ảnh dot */
+            }
+        }
+    }
+    
+    .number-items {
+        padding-left: 15px;
+    
+        p {
+            color: #D0D0D4;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+    }
